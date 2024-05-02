@@ -1,0 +1,39 @@
+{
+  "name": "ui-hacker-news",
+  "packageManager": "yarn@4.1.1",
+  "type": "module",
+  "main": "main.tsx",
+  "repository": "https://github.com/hell-llex/ui-hacker-news.git",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "vk-miniapps-deploy",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.3",
+    "@vkontakte/vk-mini-apps-router": "^1.4.3",
+    "@vkontakte/vkui": "^6.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.2",
+    "vite": "^5.2.11"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vkontakte/vk-miniapps-deploy": "^0.1.7",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "gh-pages": "^5.0.0",
+    "prettier": "^2.8.8",
+    "sass": "^1.62.1",
+    "typescript": "^5.0.2"
+  }
+}
