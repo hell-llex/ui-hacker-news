@@ -3,8 +3,10 @@ import { News } from '../../types';
 
 const initialState: {
   items: News[];
+  baseUrlApi: string;
 } = {
   items: [],
+  baseUrlApi: 'https://hacker-news.firebaseio.com/v0/',
 };
 
 const hackerNewsSlice = createSlice({
