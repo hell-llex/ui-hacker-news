@@ -1,39 +1,30 @@
-import './App.scss';
-import {
-  AppRoot,
-  SplitLayout,
-  SplitCol,
-  View,
-  Panel,
-  PanelHeader,
-  Header,
-  Group,
-  SimpleCell,
-  usePlatform,
-} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
-import * as React from 'react';
+import MainPage from './components/MainPage/MainPage';
+import { useActiveVkuiLocation } from '@vkontakte/vk-mini-apps-router';
+import { Root, View, Panel, AppRoot } from '@vkontakte/vkui';
+import Header from './components/Header/Header';
+import NewsPage from './components/NewsPage/NewsPage';
 
 function App() {
-  const platform = usePlatform();
+  const { view: activeView, panel: activePanel } = useActiveVkuiLocation();
 
   return (
     <>
       <AppRoot>
-        <SplitLayout header={platform !== 'vkcom' && <PanelHeader delimiter="none" />}>
-          <SplitCol autoSpaced>
-            <View activePanel="main">
-              <Panel id="main">
-                <PanelHeader>VKUI</PanelHeader>
-                <Group header={<Header mode="secondary">Items</Header>}>
-                  <SimpleCell>Hello</SimpleCell>
-                  <SimpleCell>World</SimpleCell>
-                </Group>
-              </Panel>
-            </View>
-          </SplitCol>
-        </SplitLayout>
-      </AppRoot>
+        <Header />
+        <Root activeView={activeView!}>
+          <View nav="main_view" activePanel={activePanel!}>
+            <Panel nav="main_panel">
+              <MainPage />
+            </Panel>
+          </View>
+          <View nav="news_view" activePanel={activePanel!}>
+            <Panel nav="news_panel">
+              <NewsPage />
+            </Panel>
+          </View>
+        </Root>
+      </AppRoot >
     </>
   );
 }
