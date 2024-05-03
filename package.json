@@ -10,12 +10,16 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "vk-miniapps-deploy",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "tunnel": "vk-tunnel --insecure=1 --http-protocol=https --ws-protocol=wss --host=localhost --port=3000 --timeout=5000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
+    "@vkontakte/icons": "^2.113.0",
+    "@vkontakte/vk-bridge": "^2.14.1",
     "@vkontakte/vk-mini-apps-router": "^1.4.3",
+    "@vkontakte/vk-tunnel": "^0.2.0",
     "@vkontakte/vkui": "^6.0.2",
+    "cross-env": "^7.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",

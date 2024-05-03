@@ -2,7 +2,7 @@
   "static_path": "dist",
   "app_id": 51916716,
   "endpoints": {
-    "mobile": "index_DG.html",
+    "mobile": "index.html",
     "web": "index.html"
   }
 }
